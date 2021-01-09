@@ -60,4 +60,17 @@ dependencies {
 
     //neumorphism
     implementation 'com.github.fornewid:neumorphism:0.2.1'
+
+    def biometric_version = '1.0.1'
+    implementation "androidx.biometric:biometric:$biometric_version"
+
+    //Lottie Files
+    implementation 'com.airbnb.android:lottie:3.4.4'
+
+
+
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 }

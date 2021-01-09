@@ -8,22 +8,32 @@
     android:background="@color/backgroundColor"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:title="NotePlus+"
+        android:theme="@style/CustomToolbarStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/saved_notes_available"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:fontFamily="cursive"
+        android:gravity="center"
         android:text="@string/note_saved"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/notes_available_text_size"
+        tools:visibility="gone"
         android:visibility="gone"
-        android:fontFamily="cursive"
-        android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp"
-        tools:visibility="gone" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/notes_will_appear"
@@ -33,14 +43,14 @@
         android:text="@string/note_saved_appear"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/notes_available_text_size"
-        android:visibility="gone"
         android:gravity="center"
         android:fontFamily="cursive"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:layout_editor_absoluteY="0dp"
-        tools:visibility="gone" />
+        tools:visibility="gone"
+        android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_happy_places_list"
@@ -69,15 +79,33 @@
         app:layout_constraintTop_toBottomOf="@+id/notes_will_appear"
         tools:visibility="visible" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <soup.neumorphism.NeumorphImageButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        app:neumorph_shapeType="pressed"
+        android:scaleType="centerInside"
         android:src="@drawable/ic_add"
+        style="@style/Widget.Neumorph.ImageButton"
         android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+<!--    <soup.neumorphism.NeumorphImageButton-->
+<!--        android:id="@+id/fab"-->
+<!--        style="@style/Widget.Neumorph.ImageButton"-->
+<!--        android:layout_width="88dp"-->
+<!--        android:layout_height="88dp"-->
+<!--        android:layout_marginTop="48dp"-->
+<!--        android:scaleType="centerInside"-->
+<!--        android:layout_margin="@dimen/fab_margin"-->
+<!--        android:src="@drawable/ic_fingerprint"-->
+<!--        app:neumorph_shapeType="pressed"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,9 +10,6 @@
         android:layout_height="wrap_content"
         app:neumorph_inset="12dp"
         android:foreground="?attr/selectableItemBackground"
-        app:cardCornerRadius="@dimen/item_happy_place_cv_corner_radius"
-        app:cardElevation="@dimen/item_happy_place_cv_elevation"
-        app:neumorph_backgroundColor="@color/white_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,15 +22,18 @@
             android:orientation="horizontal"
             android:padding="@dimen/item_happy_places_content_padding">
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <ImageView
                 android:id="@+id/placeImage"
-                android:layout_width="@dimen/item_happy_place_circular_image_size"
-                android:layout_height="@dimen/item_happy_place_circular_image_size"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
                 android:contentDescription="@string/image_content_description"
-                android:src="@mipmap/ic_launcher_round"
-                app:civ_border_color="@color/circular_image_border_color"
-                tools:visibility="gone"
-                />
+                android:src="@mipmap/ic_launcher_round"/>
+
+            <TextView
+                android:layout_width="2dp"
+                android:layout_margin="2dp"
+                android:background="@color/colorPrimary"
+                android:layout_height="wrap_content"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

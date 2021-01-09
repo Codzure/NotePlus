@@ -6,10 +6,12 @@ import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.internal.ContextUtils.getActivity
 import com.leonard.noteplus.adapters.NotesAdapter
 import com.leonard.noteplus.database.DatabaseHandler
 import com.leonard.noteplus.models.NoteModel
@@ -26,7 +28,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         //This call the parent constructor
         super.onCreate(savedInstanceState)
-
         // This is used to align the xml view to this class
         setContentView(R.layout.activity_main)
 

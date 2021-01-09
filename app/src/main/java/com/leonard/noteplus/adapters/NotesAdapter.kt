@@ -58,7 +58,7 @@ open class NotesAdapter(
             holder.itemView.tvDescription.text = model.description
             holder.itemView.tvDate.text = model.date
 
-            if (holder.itemView.placeImage == null){
+            if (holder.itemView.placeImage.drawable == null){
                 holder.itemView.placeImage.setBackgroundResource(R.drawable.add_screen_image_placeholder)
             } else
                 holder.itemView.placeImage.setImageURI(Uri.parse(model.image))
