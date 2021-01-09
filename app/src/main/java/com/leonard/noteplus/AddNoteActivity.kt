@@ -31,7 +31,7 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.leonard.noteplus.database.DatabaseHandler
 import com.leonard.noteplus.models.NoteModel
-import kotlinx.android.synthetic.main.activity_add_happy_place.*
+import kotlinx.android.synthetic.main.activity_add_note.*
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
@@ -57,7 +57,7 @@ class AddNoteActivity : AppCompatActivity(), View.OnClickListener {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_happy_place)
+        setContentView(R.layout.activity_add_note)
 
         setSupportActionBar(toolbar) // Use the toolbar to set the action bar.
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // This is to use the home back button.

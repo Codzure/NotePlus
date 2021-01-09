@@ -137,7 +137,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/til_location" />
 
-            <soup.neumorphism.NeumorphImageView
+            <ImageView
                 android:id="@+id/iv_place_image"
                 android:layout_width="@dimen/add_screen_place_image_size"
                 android:layout_height="@dimen/add_screen_place_image_size"
@@ -146,8 +146,6 @@
                 android:padding="@dimen/add_screen_place_image_padding"
                 android:scaleType="centerCrop"
                 android:src="@drawable/add_screen_image_placeholder"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_select_current_location" />
 

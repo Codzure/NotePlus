@@ -3,18 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/backgroundColor"
     android:layout_height="match_parent"
-    tools:context=".NoteDetailActivity">
+    >
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_happy_place_detail"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         android:theme="@style/CustomToolbarStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/share_menu"/>
 
     <ScrollView
         android:id="@+id/sv_main"
@@ -24,17 +26,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_happy_place_detail">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <soup.neumorphism.NeumorphImageView
+            <ImageView
                 android:id="@+id/iv_place_image"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/detail_screen_image_height_size"
+                android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
+                android:layout_marginStart="@dimen/detail_screen_description_margin"
+                android:layout_marginTop="@dimen/detail_screen_description_margin"
+                android:layout_marginEnd="@dimen/detail_screen_description_margin"
                 android:src="@drawable/detail_screen_image_placeholder"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -49,6 +54,7 @@
                 android:layout_marginEnd="@dimen/detail_screen_description_margin"
                 android:textColor="@color/detail_screen_description_text_color"
                 android:textSize="@dimen/detail_screen_description_text_size"
+                android:fontFamily="monospace"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.533"
                 app:layout_constraintStart_toStartOf="parent"
@@ -65,6 +71,7 @@
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/detail_screen_location_text_size"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_description"
