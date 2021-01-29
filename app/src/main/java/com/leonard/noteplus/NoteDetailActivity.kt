@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -56,40 +57,32 @@ class NoteDetailActivity : AppCompatActivity() {
 
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.share_menu, menu)
-//        return true
-////        if (null == getShareIntent().resolveActivity(this.packageManager)) {
-////            if (menu != null) {
-////                menu.findItem(R.id.share)?.isVisible = false
-////            }
-////        }
-//    }
-//
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when (item.itemId) {
-//            R.id.share -> shareSuccess()
-//        }
-//
-//        return super.onOptionsItemSelected(item)
-//    }
-//
-//
-//    @SuppressLint("StringFormatMatches")
-//    private fun getShareIntent(noteModel: NoteModel): Intent {
-//        //val args = WonFragmentArgs.fromBundle(requireArguments())
-//        val shareIntent = Intent(Intent.ACTION_SEND)
-//        shareIntent.setType("text/plain")
-//            .putExtra(
-//                Intent.EXTRA_TEXT,
-//                getString(R.string.share_text, "${noteModel.title} ${noteModel.image} ${noteModel.description}")
-//            )
-//        return shareIntent
-//    }
-//
-//    private fun shareSuccess() {
-//        //startActivity(getShareIntent(NoteModel())
-//    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.share_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.share -> {
+                shareNote()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun shareNote(): Intent {
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.setType("text/plain")
+                .putExtra(
+                        Intent.EXTRA_TEXT,
+                        //getString(R.string.share_text, "${noteModel.title} ${noteModel.image} ${noteModel.description}")
+                "Share note details"
+                )
+        return shareIntent
+    }
 
 }

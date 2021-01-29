@@ -12,7 +12,7 @@
     <dimen name="add_screen_text_add_image_padding">10dp</dimen>
     <dimen name="add_screen_text_add_image_textSize">14sp</dimen>
     <dimen name="add_screen_btn_save_marginTop">24dp</dimen>
-    <dimen name="add_screen_btn_save_paddingTopBottom">8dp</dimen>
+    <dimen name="add_screen_btn_save_paddingTopBottom">16dp</dimen>
     <dimen name="btn_text_size">18sp</dimen>
     <dimen name="image_border_stroke_size">0.5dp</dimen>
     <dimen name="add_place_image_shape_radius">3dp</dimen>
@@ -31,7 +31,7 @@
     <dimen name="item_happy_place_description_textSize">14sp</dimen>
 
     <dimen name="detail_screen_image_height_size">250dp</dimen>
-    <dimen name="detail_screen_description_margin">8dp</dimen>
+    <dimen name="detail_screen_description_margin">16dp</dimen>
     <dimen name="detail_screen_description_text_size">20sp</dimen>
     <dimen name="detail_screen_location_marginStartEnd">8dp</dimen>
     <dimen name="detail_screen_location_marginTop">16dp</dimen>

@@ -15,6 +15,9 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.provider.Settings
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -410,68 +413,23 @@ class AddNoteActivity : AppCompatActivity(), View.OnClickListener {
         return Uri.parse(file.absolutePath)
     }
 
-//    /**
-//     * A function which is used to verify that the location or let's GPS is enable or not of the user's device.
-//     */
-//    private fun isLocationEnabled(): Boolean {
-//        val locationManager: LocationManager =
-//            getSystemService(Context.LOCATION_SERVICE) as LocationManager
-//        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || locationManager.isProviderEnabled(
-//            LocationManager.NETWORK_PROVIDER
-//        )
-//    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.edit_menu, menu)
+        return true
+    }
 
-//    /**
-//     * A function to request the current location. Using the fused location provider client.
-//     */
-//    @SuppressLint("MissingPermission")
-//    private fun requestNewLocationData() {
-//
-//        val mLocationRequest = LocationRequest()
-//        mLocationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-//        mLocationRequest.interval = 0
-//        mLocationRequest.fastestInterval = 0
-//        mLocationRequest.numUpdates = 1
-//
-//        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-//        mFusedLocationClient.requestLocationUpdates(
-//            mLocationRequest, mLocationCallback,
-//            Looper.myLooper()
-//        )
-//    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.edit -> {
+                //editNote()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
-//    /**
-//     * A location callback object of fused location provider client where we will get the current location details.
-//     */
-//    private val mLocationCallback = object : LocationCallback() {
-//        override fun onLocationResult(locationResult: LocationResult) {
-//            val mLastLocation: Location = locationResult.lastLocation
-//            mLatitude = mLastLocation.latitude
-//            Log.e("Current Latitude", "$mLatitude")
-//            mLongitude = mLastLocation.longitude
-//            Log.e("Current Longitude", "$mLongitude")
-//
-//            // TODO(Step 2: Call the AsyncTask class fot getting an address from the latitude and longitude.)
-//            // START
-//            val addressTask =
-//                GetAddressFromLatLng(this@AddHappyPlaceActivity, mLatitude, mLongitude)
-//
-//            addressTask.setAddressListener(object :
-//                GetAddressFromLatLng.AddressListener {
-//                override fun onAddressFound(address: String?) {
-//                    Log.e("Address ::", "" + address)
-//                    et_location.setText(address) // Address is set to the edittext
-//                }
-//
-//                override fun onError() {
-//                    Log.e("Get Address ::", "Something is wrong...")
-//                }
-//            })
-//
-//            addressTask.getAddress()
-//            // END
-//        }
-//    }
 
     companion object {
         private const val GALLERY = 1
