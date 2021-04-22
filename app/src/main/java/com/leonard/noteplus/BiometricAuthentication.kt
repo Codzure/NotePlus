@@ -75,7 +75,7 @@ class BiometricAuthentication : AppCompatActivity() {
     }
 
     private fun goToHomeFragment() {
-        val intent = Intent(this@BiometricAuthentication, MainActivity::class.java)
+        val intent = Intent(this@BiometricAuthentication, DashboardActivity::class.java)
         startActivity(intent)
     }
 
@@ -121,7 +121,7 @@ class BiometricAuthentication : AppCompatActivity() {
         val existing: Button = dialog.findViewById(R.id.primaryButton)
 
         existing.setOnClickListener {
-            val intent = Intent(this@BiometricAuthentication, MainActivity::class.java)
+            val intent = Intent(this@BiometricAuthentication, DashboardActivity::class.java)
             startActivity(intent)
             dialog.dismiss()
         }

@@ -11,11 +11,12 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
         android:theme="@style/CustomToolbarStyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:titleTextColor="@color/primary_text_color"
         app:layout_constraintTop_toTopOf="parent"
+        app:title="Note details"
         app:menu="@menu/share_menu"/>
 
     <ScrollView
@@ -34,7 +35,7 @@
 
             <ImageView
                 android:id="@+id/iv_place_image"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:layout_marginStart="@dimen/detail_screen_description_margin"
