@@ -80,14 +80,17 @@
         app:layout_constraintTop_toBottomOf="@+id/notes_will_appear"
         tools:visibility="visible" />
 
-    <soup.neumorphism.NeumorphImageButton
+    <soup.neumorphism.NeumorphButton
         android:id="@+id/fab"
-        android:layout_width="80dp"
+        android:layout_width="200dp"
         android:layout_height="80dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:neumorph_shapeType="pressed"
+        app:neumorph_shadowColorDark="@color/primary_text_color"
         android:scaleType="centerInside"
+        android:text="Add new task"
+        android:gravity="center"
         android:src="@drawable/ic_add"
         style="@style/Widget.Neumorph.ImageButton"
         android:background="@color/colorPrimary"
