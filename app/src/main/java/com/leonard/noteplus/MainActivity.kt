@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -88,6 +89,8 @@ class MainActivity : AppCompatActivity() {
 
         val placesAdapter = NotesAdapter(this, happyPlacesList)
         rv_happy_places_list.adapter = placesAdapter
+        val manager = GridLayoutManager(this, 2)
+        rv_happy_places_list.layoutManager = manager
 
         placesAdapter.setOnClickListener(object :
                 NotesAdapter.OnClickListener {
