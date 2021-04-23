@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white_color"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter a new name for your file"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/primary_text_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/etFileName"
+            android:text="abcd"
+            android:textColor="@color/primary_text_color"
+            android:padding="10dp"
+            android:background="@drawable/button_bordered"
+            android:layout_weight="0.75"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text=".pdf"
+            android:textColor="@color/primary_text_color"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:id="@+id/linRenamingFile"
+        android:layout_margin="10dp"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/custom_shadow_dark_blue"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Renaming your file. Please wait.."
+            android:textColor="@color/primary_text_color"
+            android:layout_marginTop="10dp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Go Back"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:textColor="@color/white_color"
+            android:layout_marginEnd="10dp"
+            android:id="@+id/btnGoBack"
+            app:backgroundTint="@color/custom_lightest_blue"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Rename"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white_color"
+            android:id="@+id/btnRename"
+            app:backgroundTint="@color/custom_shadow_dark_blue"/>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature android:name="android.hardware.camera.any" />
 
     <application
         android:allowBackup="true"
@@ -15,11 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NotePlus">
-        <activity android:name=".DashboardActivity"/>
-        <activity android:name=".SplashActivity">
-
-        </activity>
-        <activity android:name=".BiometricAuthentication" >
+        <activity android:name=".scanner.ui.OpenFromGalleryActivity"></activity>
+        <activity android:name=".scanner.ui.CameraActivity" />
+        <activity android:name=".scanner.ui.ScannerActivity" />
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".SplashActivity" />
+        <activity android:name=".BiometricAuthentication">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,6 +33,17 @@
         <activity android:name=".NoteDetailActivity" />
         <activity android:name=".AddNoteActivity" />
         <activity android:name=".MainActivity" />
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>
