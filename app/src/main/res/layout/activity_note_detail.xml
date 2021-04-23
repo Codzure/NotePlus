@@ -88,7 +88,8 @@
                 android:paddingStart="@dimen/_10sdp"
                 android:text="Notes"
                 android:layout_marginTop="@dimen/_12sdp"
-                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text_color"
                 android:textSize="@dimen/_15ssp" />
 
             <androidx.cardview.widget.CardView
@@ -107,8 +108,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/_10ssp"
-                        android:textColor="@color/colorPrimary"
-                        android:textStyle="bold"
+                        android:textColor="@color/primary_text_color"
                         android:fontFamily="@font/poppins_regular"
                         android:paddingTop="@dimen/_10sdp"
                         android:paddingStart="@dimen/_5sdp"

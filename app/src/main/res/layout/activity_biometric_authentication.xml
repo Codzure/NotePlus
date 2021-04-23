@@ -9,11 +9,13 @@
 
     <soup.neumorphism.NeumorphTextView
         android:id="@+id/fingerPrintLabel"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
         android:gravity="center"
-        android:text="Register for fingerprint authentication"
+        android:maxLines="2"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Use phone registered fingerprint for authentication"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toTopOf="parent" />
