@@ -11,7 +11,10 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.leonard.noteplus.models.NoteModel
+import kotlinx.android.synthetic.main.activity_add_note.*
 import kotlinx.android.synthetic.main.activity_note_detail.*
+import kotlinx.android.synthetic.main.activity_note_detail.iv_place_image
+import kotlinx.android.synthetic.main.activity_note_detail.toolbar
 
 
 class NoteDetailActivity : AppCompatActivity() {
@@ -24,6 +27,12 @@ class NoteDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         // This is used to align the xml view to this class
         setContentView(R.layout.activity_note_detail)
+
+        setSupportActionBar(toolbar) // Use the toolbar to set the action bar.
+        supportActionBar?.setDisplayHomeAsUpEnabled(true) // This is to use the home back button.
+        imgToolbarBtnBack.setOnClickListener {
+            onBackPressed()
+        }
 
         var happyPlaceDetailModel: NoteModel? = null
 
@@ -53,6 +62,10 @@ class NoteDetailActivity : AppCompatActivity() {
             tv_description.text = happyPlaceDetailModel.description
             iv_place_image.setImageURI(Uri.parse(happyPlaceDetailModel.image))
             iv_place_image.visibility = View.VISIBLE
+        }
+
+        share.setOnClickListener {
+            shareNote()
         }
 
     }

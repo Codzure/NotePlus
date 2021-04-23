@@ -22,6 +22,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.MaterialToast.lib.MaterialToast
 import com.google.android.gms.location.*
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
@@ -199,6 +200,7 @@ class AddNoteActivity : AppCompatActivity(), View.OnClickListener {
                                 setResult(Activity.RESULT_OK);
                                 finish()//finishing activity
                             }
+
                         } else {
                             val updateHappyPlace = dbHandler.updateHappyPlace(happyPlaceModel)
 
@@ -422,11 +424,57 @@ class AddNoteActivity : AppCompatActivity(), View.OnClickListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
         return when (item.itemId) {
-            R.id.edit -> {
-                //editNote()
+            R.id.saveNote -> {
+                saveNote()
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun saveNote() {
+        when {
+            et_title.text.isNullOrEmpty() -> {
+                Toast.makeText(this, "Title your note", Toast.LENGTH_SHORT).show()
+            }
+            et_description.text.isNullOrEmpty() -> {
+                Toast.makeText(this, "Describe your note.", Toast.LENGTH_SHORT)
+                        .show()
+            }
+            else -> {
+
+                // Assigning all the values to data model class.
+                val happyPlaceModel = NoteModel(
+                        if (mHappyPlaceDetails == null) 0 else mHappyPlaceDetails!!.id,
+                        et_title.text.toString(),
+                        saveImageToInternalStorage.toString(),
+                        et_description.text.toString(),
+                        et_date.text.toString(),
+                        et_location.text.toString(),
+                        mLatitude,
+                        mLongitude
+                )
+
+                // Here we initialize the database handler class.
+                val dbHandler = DatabaseHandler(this)
+
+                if (mHappyPlaceDetails == null) {
+                    val addHappyPlace = dbHandler.addHappyPlace(happyPlaceModel)
+
+                    if (addHappyPlace > 0) {
+                        setResult(Activity.RESULT_OK);
+                        finish()//finishing activity
+                    }
+
+                } else {
+                    val updateHappyPlace = dbHandler.updateHappyPlace(happyPlaceModel)
+
+                    if (updateHappyPlace > 0) {
+                        setResult(Activity.RESULT_OK);
+                        finish()//finishing activity
+                    }
+                }
+            }
         }
     }
 

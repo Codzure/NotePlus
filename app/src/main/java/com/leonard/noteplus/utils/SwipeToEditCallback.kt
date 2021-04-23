@@ -15,7 +15,7 @@ import com.leonard.noteplus.R
  */
 abstract class SwipeToEditCallback(context: Context) : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
 
-    private val editIcon = ContextCompat.getDrawable(context, R.drawable.ic_edit)
+    private val editIcon = ContextCompat.getDrawable(context, R.drawable.ic_save)
     private val intrinsicWidth = editIcon!!.intrinsicWidth
     private val intrinsicHeight = editIcon!!.intrinsicHeight
     private val background = ColorDrawable()
