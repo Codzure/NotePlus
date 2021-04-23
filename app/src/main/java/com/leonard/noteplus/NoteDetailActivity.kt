@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.leonard.noteplus.models.NoteModel
+import id.voela.actrans.AcTrans
 import kotlinx.android.synthetic.main.activity_add_note.*
 import kotlinx.android.synthetic.main.activity_note_detail.*
 import kotlinx.android.synthetic.main.activity_note_detail.iv_place_image
@@ -32,6 +33,7 @@ class NoteDetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // This is to use the home back button.
         imgToolbarBtnBack.setOnClickListener {
             onBackPressed()
+            AcTrans.Builder(this).performSlideToRight()
         }
 
         var happyPlaceDetailModel: NoteModel? = null
@@ -52,15 +54,15 @@ class NoteDetailActivity : AppCompatActivity() {
                 onBackPressed()
             }
 
-            if (iv_place_image.drawable !== null) {
+            if (iv_place_image.drawable != null) {
                 iv_place_image.setImageURI(Uri.parse(happyPlaceDetailModel.image))
                 iv_place_image.visibility = View.VISIBLE
             } else {
-                iv_place_image.visibility = View.GONE
+                iv_place_image.setBackgroundResource(R.drawable.add_screen_image_placeholder)
             }
 
             tv_description.text = happyPlaceDetailModel.description
-            iv_place_image.setImageURI(Uri.parse(happyPlaceDetailModel.image))
+
             iv_place_image.visibility = View.VISIBLE
         }
 

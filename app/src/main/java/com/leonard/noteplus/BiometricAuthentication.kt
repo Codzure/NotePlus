@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
+import id.voela.actrans.AcTrans
 import kotlinx.android.synthetic.main.activity_biometric_authentication.*
 import java.util.*
 
@@ -77,6 +78,7 @@ class BiometricAuthentication : AppCompatActivity() {
     private fun goToHomeFragment() {
         val intent = Intent(this@BiometricAuthentication, DashboardActivity::class.java)
         startActivity(intent)
+        AcTrans.Builder(this).performSlideToLeft()
     }
 
     private fun showToast(message: String){
@@ -123,6 +125,7 @@ class BiometricAuthentication : AppCompatActivity() {
         existing.setOnClickListener {
             val intent = Intent(this@BiometricAuthentication, DashboardActivity::class.java)
             startActivity(intent)
+            AcTrans.Builder(this).performSlideToLeft()
             dialog.dismiss()
         }
     }

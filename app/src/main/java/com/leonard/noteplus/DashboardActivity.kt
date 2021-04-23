@@ -3,6 +3,7 @@ package com.leonard.noteplus
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import id.voela.actrans.AcTrans
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main.fab
@@ -20,11 +21,13 @@ class DashboardActivity : AppCompatActivity() {
 
         cardViewTodo.setOnClickListener{
             val intent = Intent(this@DashboardActivity, MainActivity::class.java)
+            AcTrans.Builder(this).performFade()
             startActivity(intent)
         }
 
         scanCardView.setOnClickListener{
             val intent = Intent(this@DashboardActivity, MainActivity::class.java)
+            AcTrans.Builder(this).performFade()
             startActivity(intent)
         }
 

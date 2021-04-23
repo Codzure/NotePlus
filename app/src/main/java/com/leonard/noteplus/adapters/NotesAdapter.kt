@@ -7,6 +7,7 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.leonard.noteplus.AddNoteActivity
 import com.leonard.noteplus.MainActivity
@@ -58,8 +59,10 @@ open class NotesAdapter(
             holder.itemView.tvDescription.text = model.description
             holder.itemView.tvDate.text = model.date
 
-            if (holder.itemView.placeImage.drawable == null){
-                holder.itemView.placeImage.setBackgroundResource(R.drawable.add_screen_image_placeholder)
+            if (holder.itemView.placeImage.drawable != null){
+                holder.itemView.placeImage.setImageURI(Uri.parse(model.image))
+                holder.itemView.placeImage.isVisible = true
+                //holder.itemView.placeImage.setBackgroundResource(R.drawable.add_screen_image_placeholder)
             } else
                 holder.itemView.placeImage.setImageURI(Uri.parse(model.image))
 

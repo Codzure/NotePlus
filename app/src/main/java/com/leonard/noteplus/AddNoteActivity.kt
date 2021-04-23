@@ -35,6 +35,7 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 import com.leonard.noteplus.database.DatabaseHandler
 import com.leonard.noteplus.models.NoteModel
+import id.voela.actrans.AcTrans
 import kotlinx.android.synthetic.main.activity_add_note.*
 import java.io.File
 import java.io.FileOutputStream
@@ -67,6 +68,7 @@ class AddNoteActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.setDisplayHomeAsUpEnabled(true) // This is to use the home back button.
         toolbar.setNavigationOnClickListener {
             onBackPressed()
+            AcTrans.Builder(this).performSlideToRight()
         }
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
@@ -211,6 +213,7 @@ class AddNoteActivity : AppCompatActivity(), View.OnClickListener {
                         }
                     }
                 }
+                AcTrans.Builder(this).performSlideToRight()
             }
         }
     }
@@ -476,6 +479,7 @@ class AddNoteActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         }
+        AcTrans.Builder(this).performSlideToRight()
     }
 
 

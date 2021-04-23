@@ -6,6 +6,7 @@
 
     <color name="primary_text_color">#212121</color>
     <color name="secondary_text_color">#9AA2AF</color>
+    <color name="off_white">#e7e7e7</color>
     <color name="white_color">#F8FCFF</color>
     <color name="button_background_color">#542e71</color>
 

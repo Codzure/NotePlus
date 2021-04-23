@@ -18,6 +18,7 @@ import com.leonard.noteplus.database.DatabaseHandler
 import com.leonard.noteplus.models.NoteModel
 import com.leonard.noteplus.utils.SwipeToDeleteCallback
 import com.leonard.noteplus.utils.SwipeToEditCallback
+import id.voela.actrans.AcTrans
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_happy_place.*
 
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, AddNoteActivity::class.java)
 
             startActivityForResult(intent, ADD_PLACE_ACTIVITY_REQUEST_CODE)
+            AcTrans.Builder(this).performFade()
         }
 
         getHappyPlacesListFromLocalDB()
