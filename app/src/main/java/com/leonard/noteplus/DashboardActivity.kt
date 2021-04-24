@@ -3,6 +3,7 @@ package com.leonard.noteplus
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.leonard.noteplus.utils.CustomSnackBar
 import id.voela.actrans.AcTrans
 import kotlinx.android.synthetic.main.activity_dashboard.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,9 +27,10 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         scanCardView.setOnClickListener{
-            val intent = Intent(this@DashboardActivity, MainActivity::class.java)
+            CustomSnackBar(this, "Coming soon")
+           /* val intent = Intent(this@DashboardActivity, MainActivity::class.java)
             AcTrans.Builder(this).performFade()
-            startActivity(intent)
+            startActivity(intent)*/
         }
 
     }
