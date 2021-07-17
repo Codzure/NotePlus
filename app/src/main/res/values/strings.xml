@@ -20,4 +20,9 @@
     <string name="share">Share</string>
 
     <string name="share_text">Sharing… #NotePlus+ with %1$d/%2$d. Thank you!</string>
+    <string name="add_new_note">Add new note</string>
+    <string name="noteplus_offers_you_the_ability_to">NotePlus+ offers you the ability to:</string>
+    <string name="save_plain_notes_take_pictures_and_attach_documents">Save plain notes, take pictures and attach documents</string>
+    <string name="scan_documents">Scan documents</string>
+    <string name="share_saved_notes_and_documents">Share saved notes and documents</string>
 </resources>

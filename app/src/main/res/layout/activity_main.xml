@@ -84,30 +84,15 @@
         android:id="@+id/fab"
         style="@style/Widget.Neumorph.ImageButton"
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
+        android:layout_height="65dp"
         android:background="@color/colorPrimary"
         android:gravity="center"
         android:padding="16dp"
         android:fontFamily="@font/poppins_regular"
-        android:text="Add new task"
+        android:text="@string/add_new_note"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
         app:neumorph_shadowColorDark="@color/primary_text_color"
         app:neumorph_shapeType="pressed" />
-
-<!--    <soup.neumorphism.NeumorphImageButton-->
-<!--        android:id="@+id/fab"-->
-<!--        style="@style/Widget.Neumorph.ImageButton"-->
-<!--        android:layout_width="88dp"-->
-<!--        android:layout_height="88dp"-->
-<!--        android:layout_marginTop="48dp"-->
-<!--        android:scaleType="centerInside"-->
-<!--        android:layout_margin="@dimen/fab_margin"-->
-<!--        android:src="@drawable/ic_fingerprint"-->
-<!--        app:neumorph_shapeType="pressed"-->
-<!--        android:layout_gravity="bottom|end"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
