@@ -28,12 +28,9 @@ class MainActivity : AppCompatActivity() {
      * This function is auto created by Android when the Activity Class is created.
      */
     override fun onCreate(savedInstanceState: Bundle?) {
-        //This call the parent constructor
         super.onCreate(savedInstanceState)
-        // This is used to align the xml view to this class
         setContentView(R.layout.activity_main)
 
-        // Setting an click event for Fab Button and calling the AddHappyPlaceActivity.
         fab.setOnClickListener {
             val intent = Intent(this@MainActivity, AddNoteActivity::class.java)
 
@@ -44,11 +41,9 @@ class MainActivity : AppCompatActivity() {
         getHappyPlacesListFromLocalDB()
     }
 
-    // Call Back method  to get the Message form other Activity
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        // check if the request code is same as what is passed  here it is 'ADD_PLACE_ACTIVITY_REQUEST_CODE'
         if (requestCode == ADD_PLACE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
                 getHappyPlacesListFromLocalDB()

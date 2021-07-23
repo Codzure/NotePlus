@@ -32,6 +32,8 @@ class BiometricAuthentication : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_biometric_authentication)
+        conditionCheck()
+        authenticateDialog()
         biometricManager = BiometricManager.from(this)
         val executor = ContextCompat.getMainExecutor(this)
         checkBiometricStatus(biometricManager)
@@ -59,11 +61,16 @@ class BiometricAuthentication : AppCompatActivity() {
 
         promptInfo = BiometricPrompt.PromptInfo.Builder()
                 .setTitle("Register for Biometric.")
-                .setDescription("Use device biometric authentication for to secure your account.")
+                .setDescription("Use device biometric authentication to login.")
                 .setConfirmationRequired(false)
                 .setNegativeButtonText("Cancel")
                 .build()
 
+        authenticateDialog()
+
+    }
+
+    private fun authenticateDialog() {
         fingerPrint.setOnClickListener{
             val canAuthenticate = BiometricManager.from(this).canAuthenticate()
             if (canAuthenticate == BiometricManager.BIOMETRIC_SUCCESS) {
@@ -71,8 +78,6 @@ class BiometricAuthentication : AppCompatActivity() {
             }else
                 conditionCheck()
         }
-
-
     }
 
     private fun goToHomeFragment() {
